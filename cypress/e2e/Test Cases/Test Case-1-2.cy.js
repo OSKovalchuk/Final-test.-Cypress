@@ -22,6 +22,10 @@ describe('Login Test', () => {
       //Logout from the application
       cy.get('#logout_sidebar_link').click();
 
+      // Verify the URL is changed back to the login page
+      cy.url().should('eq', 'https://www.saucedemo.com/');
+      
+
     });
   });
   

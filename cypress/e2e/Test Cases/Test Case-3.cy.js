@@ -1,4 +1,4 @@
-// cypress/integration/invalidLogin.spec.js
+// cypress invalidLogin.spec.js
 
 describe('Invalid Login Test', () => {
     it('Valid (standard_user) user cannot log in with invalid credentials', () => {
