@@ -1,16 +1,17 @@
-// cypress/integration/login.spec.js
-const username = 'standard_user';
-const password = 'secret_sauce';
+import Login from "../../PageObjects/Login";
+
 describe('Logout Test', () => {
     it('Valid (standard_user) user can logot', () => {
       const baseUrl = Cypress.config('baseUrl');
+      const login = new Login();
+      const username = 'standard_user';
+      const password = 'secret_sauce';
       
+  
       cy.visit (baseUrl); 
-  
-      cy.get('input[data-test="username"]').type(username);
-      cy.get('input[data-test="password"]').type(password);
-  
-      cy.get('input[type="submit"]').click();
+      login.username().type(username);
+      login.password().type(password);
+      login.clickbutton().click();
       
       cy.url().should('include', '/inventory.html');
       

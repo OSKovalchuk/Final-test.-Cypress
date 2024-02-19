@@ -4,7 +4,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       baseUrl: 'https://www.saucedemo.com/';
-      user: 'my-user';
+      
     },
   },
 });

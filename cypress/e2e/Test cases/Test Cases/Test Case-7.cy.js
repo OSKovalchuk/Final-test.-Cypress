@@ -1,22 +1,25 @@
-// cypress/integration/buyItem.spec.js
-const username = 'standard_user';
-const password = 'secret_sauce';
-const Item1 = 'Sauce Labs Backpack';
-const price = '29.99';
-const firstName = 'John';
-const lastName = 'Doe';
-const postalCode = '12345';
-const itemButtonLabel = "add-to-cart-sauce-labs-backpack"
+import Login from "../../PageObjects/Login";
+
 
 describe('Buy Item Test', () => {
     it('Valid user can buy any item', () => {
+      const login = new Login();
       const baseUrl = Cypress.config('baseUrl');
+      const username = 'standard_user';
+      const password = 'secret_sauce';
+      const Item1 = 'Sauce Labs Backpack';
+      const price = '29.99';
+      const firstName = 'John';
+      const lastName = 'Doe';
+      const postalCode = '12345';
+      const itemButtonLabel = "add-to-cart-sauce-labs-backpack"
+
       cy.visit (baseUrl); 
+      login.username().type(username);
+      login.password().type(password);
+      login.clickbutton().click();
   
-      cy.get('input[data-test="username"]').type(username);
-      cy.get('input[data-test="password"]').type(password);
-      cy.get('input[type="submit"]').click();
-  
+    
       cy.url().should('include', '/inventory.html');
   
       cy.get('.inventory_item').first().find(`button[data-test=${itemButtonLabel}]`).click();
