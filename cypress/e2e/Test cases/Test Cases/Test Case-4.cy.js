@@ -8,7 +8,6 @@ describe('Locked-Out User Test', () => {
       const username = 'locked_out_user';
       const password = 'secret_sauce';
       
-      cy.visit (baseUrl); 
       login.username().type(username);
       login.password().type(password);
       login.clickbutton().click();

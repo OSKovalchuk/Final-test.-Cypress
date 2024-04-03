@@ -1,23 +1,23 @@
-
 import Login from "../../PageObjects/Login";
+
+const login = new Login();
+const username = 'standard_user';
+const password = 'secret_sauce';
 
 describe('login Test', () => {
 
-    it('Valid (standard_user) user can log in', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
 
-      const login = new Login();
-      const username = 'standard_user';
-      const password = 'secret_sauce';
-      const baseUrl = Cypress.config('baseUrl');
+  it('Valid (standard_user) user can log in', () => {
 
-      cy.visit (baseUrl); 
-      login.username().type(username);
-      login.password().type(password);
-      login.clickbutton().click();
-   
-      cy.url().should('include', '/inventory.html');
-      
-   });
+    login.username().type(username);
+    login.password().type(password);
+    login.clickbutton().click();
+
+    cy.url().should('include', '/inventory.html');
   });
- 
+});
+
 

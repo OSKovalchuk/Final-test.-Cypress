@@ -14,7 +14,6 @@ describe('Buy Item Test', () => {
       const postalCode = '12345';
       const itemButtonLabel = "add-to-cart-sauce-labs-backpack"
 
-      cy.visit (baseUrl); 
       login.username().type(username);
       login.password().type(password);
       login.clickbutton().click();

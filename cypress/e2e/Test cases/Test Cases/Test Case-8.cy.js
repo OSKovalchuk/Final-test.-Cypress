@@ -11,8 +11,6 @@ describe('Responsive Login Test', () => {
 
       cy.viewport(1000, 800);
   
-      
-      cy.visit (baseUrl); 
   
       login.username().type(username);
       login.password().type(password);

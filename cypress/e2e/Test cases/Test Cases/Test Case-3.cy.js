@@ -9,8 +9,6 @@ describe('Invalid Login Test', () => {
       const username = 'invalid_user';
       const password = 'invalid_password';
 
-      
-      cy.visit (baseUrl); 
       login.username().type(username);
       login.password().type(password);
       login.clickbutton().click();
