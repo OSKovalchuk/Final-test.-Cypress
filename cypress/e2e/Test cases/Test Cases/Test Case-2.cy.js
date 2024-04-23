@@ -1,6 +1,9 @@
 import Login from "../../PageObjects/Login";
 
 describe('Logout Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
     it('Valid (standard_user) user can logot', () => {
       const baseUrl = Cypress.config('baseUrl');
       const login = new Login();

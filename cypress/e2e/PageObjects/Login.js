@@ -13,9 +13,7 @@ class Login {
 
         return  cy.get('input[type="submit"]')
         }
-}
-beforeEach(() => {
-    cy.visit('/');
-  })
+
+  }
 
 export default Login

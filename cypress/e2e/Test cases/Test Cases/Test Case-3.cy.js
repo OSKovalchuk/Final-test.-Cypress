@@ -2,6 +2,9 @@ import Login from "../../PageObjects/Login";
 
 
 describe('Invalid Login Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
     it('Valid (standard_user) user cannot log in with invalid credentials', () => {
       
       const baseUrl = Cypress.config('baseUrl');

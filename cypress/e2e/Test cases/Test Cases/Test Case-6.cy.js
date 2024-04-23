@@ -2,6 +2,9 @@ import Login from "../../PageObjects/Login";
 
 
 describe('Add to Cart Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
     it('Valid user can add any item to the cart', () => {
       const baseUrl = Cypress.config('baseUrl');
       const login = new Login();
