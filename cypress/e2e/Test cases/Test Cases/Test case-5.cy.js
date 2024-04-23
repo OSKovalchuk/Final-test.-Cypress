@@ -8,7 +8,6 @@ describe('Performance Glitch User Test', () => {
       const username = 'performance_glitch_user';
       const password = 'secret_sauce';
 
-      cy.visit (baseUrl); 
       login.username().type(username);
       login.password().type(password);
       login.clickbutton().wait(5000).click();
