@@ -2,6 +2,9 @@ import Login from "../../PageObjects/Login";
 
 
 describe('Locked-Out User Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
     it('Locked-out user cannot log in with valid credentials', () => {
       const baseUrl = Cypress.config('baseUrl');
       const login = new Login();

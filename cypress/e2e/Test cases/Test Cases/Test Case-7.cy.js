@@ -2,6 +2,9 @@ import Login from "../../PageObjects/Login";
 
 
 describe('Buy Item Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
     it('Valid user can buy any item', () => {
       const login = new Login();
       const baseUrl = Cypress.config('baseUrl');

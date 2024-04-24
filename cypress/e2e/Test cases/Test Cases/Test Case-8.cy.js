@@ -2,6 +2,9 @@ import Login from "../../PageObjects/Login";
 
 
 describe('Responsive Login Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
     it('Valid user can login when screen width is less than 1060px', () => {
 
       const login = new Login();

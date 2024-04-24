@@ -2,6 +2,9 @@ import Login from "../../PageObjects/Login";
 
 
 describe('Performance Glitch User Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
     it('Valid (performance_glitch_user) user can log in with a long timeout', () => {
       const baseUrl = Cypress.config('baseUrl');
       const login = new Login();

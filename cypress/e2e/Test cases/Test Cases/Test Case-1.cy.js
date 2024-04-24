@@ -12,9 +12,10 @@ describe('login Test', () => {
 
   it('Valid (standard_user) user can log in', () => {
 
-    login.username().type(username);
-    login.password().type(password);
-    login.clickbutton().click();
+   // login.username().type(username);
+   // login.password().type(password);
+  //  login.clickbutton().click();
+  cy.login (username,password);
 
     cy.url().should('include', '/inventory.html');
   });
