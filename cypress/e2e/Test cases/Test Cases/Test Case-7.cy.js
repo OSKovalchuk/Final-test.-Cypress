@@ -16,12 +16,8 @@ describe('Buy Item Test', () => {
       const lastName = 'Doe';
       const postalCode = '12345';
       const itemButtonLabel = "add-to-cart-sauce-labs-backpack"
-
-      login.username().type(username);
-      login.password().type(password);
-      login.clickbutton().click();
-  
-    
+      cy.login (username,password); 
+     
       cy.url().should('include', '/inventory.html');
   
       cy.get('.inventory_item').first().find(`button[data-test=${itemButtonLabel}]`).click();

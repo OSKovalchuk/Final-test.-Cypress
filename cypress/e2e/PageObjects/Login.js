@@ -12,7 +12,10 @@ class Login {
     clickbutton (){
 
         return  cy.get('input[type="submit"]')
+
+
         }
+        
 
   }
 

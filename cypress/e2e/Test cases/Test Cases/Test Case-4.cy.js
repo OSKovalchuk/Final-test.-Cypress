@@ -10,11 +10,9 @@ describe('Locked-Out User Test', () => {
       const login = new Login();
       const username = 'locked_out_user';
       const password = 'secret_sauce';
-      
-      login.username().type(username);
-      login.password().type(password);
-      login.clickbutton().click();
 
+      cy.login (username,password); 
+    
       cy.get('h3[data-test="error"]').should('be.visible').and('have.text', 'Epic sadface: Sorry, this user has been locked out.');
 
     });
