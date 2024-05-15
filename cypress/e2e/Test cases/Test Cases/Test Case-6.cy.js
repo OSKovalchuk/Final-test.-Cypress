@@ -2,6 +2,9 @@ import Login from "../../PageObjects/Login";
 
 
 describe('Add to Cart Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  })
     it('Valid user can add any item to the cart', () => {
       const baseUrl = Cypress.config('baseUrl');
       const login = new Login();
@@ -10,10 +13,7 @@ describe('Add to Cart Test', () => {
       const Item1 = 'Sauce Labs Backpack';
       const price = '$29.99';
       const itemButtonLabel = "add-to-cart-sauce-labs-backpack"
-
-      login.username().type(username);
-      login.password().type(password);
-      login.clickbutton().click();
+      cy.login (username,password); 
   
       cy.url().should('include', '/inventory.html');
 
